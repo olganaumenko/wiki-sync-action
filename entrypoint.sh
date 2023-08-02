@@ -120,7 +120,7 @@ if [ "$DIFF" != "" ]; then
       
       git add .
       git commit -m "$WIKI_COMMIT_MESSAGE"
-      git push origin $BRANCH
+      git push -u origin $BRANCH
     )
   fi
 else 
