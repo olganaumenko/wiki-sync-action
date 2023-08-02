@@ -126,6 +126,7 @@ if [ "$DIFF" != "" ]; then
   fi
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
+    exit 1
 fi 
 
 rm -rf "$tmp_dir"
