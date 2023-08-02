@@ -118,10 +118,10 @@ if [ "$DIFF" != "" ]; then
       # Maybe don't need if we checkout develop...
       # git pull --ff-only origin develop
       
-      git checkout -b $BRANCH
+      git checkout -b $BRANCH$GITHUB_RUN_ID
       git add .
       git commit -m "$WIKI_COMMIT_MESSAGE"
-      git push origin $BRANCH{$GITHUB_RUN_ID}
+      git push origin $BRANCH$GITHUB_RUN_ID
     )
   fi
 else 
