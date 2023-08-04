@@ -126,11 +126,6 @@ if [ "$DIFF" != "" ]; then
   fi
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
-
-    if [${git rev-parse --abbrev-ref HEAD} != "main"]; then 
-        echo "Still on main"
-    echo "Game over!"
-    fi
 fi 
 
 rm -rf "$tmp_dir"
