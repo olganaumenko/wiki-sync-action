@@ -102,7 +102,7 @@ if [ "$DIFF" != "" ]; then
         git config --global --add safe.directory "$tmp_dir"
         git add .
         git commit -m "$WIKI_COMMIT_MESSAGE"
-        git push --set-upstream "$GIT_REPOSITORY_URL" main
+        git push --set-upstream "$GIT_REPOSITORY_URL" master
     )
   else # wiki -> $DESTINATION
     rsync -avzr --delete --exclude='.git/' "$tmp_dir/" "$DESTINATION"
@@ -127,7 +127,9 @@ if [ "$DIFF" != "" ]; then
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
     echo "Game over!"
-    if [${git rev-parse --abbrev-ref HEAD} == "main"]; then echo "Still on main" fi;
+    if [${git rev-parse --abbrev-ref HEAD} == "main"]; then 
+        echo "Still on main" 
+    fi
 fi 
 
 rm -rf "$tmp_dir"
