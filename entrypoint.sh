@@ -127,7 +127,7 @@ if [ "$DIFF" != "" ]; then
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-    echo "$BRANCH"
+    echo $BRANCH
 fi 
 
 rm -rf "$tmp_dir"
