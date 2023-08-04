@@ -125,7 +125,11 @@ if [ "$DIFF" != "" ]; then
     )
   fi
 else 
+    if [${git rev-parse --abbrev-ref HEAD} != "main"]; then
+        echo "123"
+    fi
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
+    
 fi 
 
 rm -rf "$tmp_dir"
