@@ -125,7 +125,6 @@ if [ "$DIFF" != "" ]; then
     )
   fi
 else 
-    git branch
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
 fi 
 
