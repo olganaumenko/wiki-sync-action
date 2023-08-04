@@ -125,15 +125,7 @@ if [ "$DIFF" != "" ]; then
     )
   fi
 else 
-    warning "No file diff between $SOURCE and $DESTINATION. Exiting."
-    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-        if [[ "$BRANCH" != "main" ]]; then
-          echo 'Aborting script';
-          exit 1;
-        fi
-
-    echo 'Do stuff';
-    
+    warning "No file diff between $SOURCE and $DESTINATION. Exiting."   
 fi 
 
 rm -rf "$tmp_dir"
