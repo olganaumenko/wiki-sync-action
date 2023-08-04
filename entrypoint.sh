@@ -127,7 +127,7 @@ if [ "$DIFF" != "" ]; then
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-        if [[ "$BRANCH" != "x" ]]; then
+        if [[ "$BRANCH" != "master" ]]; then
           echo 'Aborting script';
           exit 1;
         fi
