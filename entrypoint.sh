@@ -125,10 +125,14 @@ if [ "$DIFF" != "" ]; then
     )
   fi
 else 
-    if [$(git rev-parse --abbrev-ref HEAD) == "main"]; then
-        echo "123"
-    fi
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
+    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+        if [[ "$BRANCH" != "main" ]]; then
+          echo 'Aborting script';
+          exit 1;
+        fi
+
+    echo 'Do stuff';
     
 fi 
 
