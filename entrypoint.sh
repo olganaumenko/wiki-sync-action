@@ -129,7 +129,6 @@ else
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
     if [[ "$BRANCH" != "main" ]]; then
         echo "$BRANCH";
-        exit 1;
     fi
 
     echo 'Do stuff';
