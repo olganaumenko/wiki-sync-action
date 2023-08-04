@@ -127,12 +127,12 @@ if [ "$DIFF" != "" ]; then
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-        if [[ "$BRANCH" != "main" ]]; then
-          echo "$BRANCH";
-          exit 1;
-        fi
+    if [[ "$BRANCH" != "main" ]]; then
+        echo "$BRANCH";
+        exit 1;
+    fi
 
-        echo 'Do stuff';
+    echo 'Do stuff';
 fi 
 
 rm -rf "$tmp_dir"
