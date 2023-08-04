@@ -102,7 +102,7 @@ if [ "$DIFF" != "" ]; then
         git config --global --add safe.directory "$tmp_dir"
         git add .
         git commit -m "$WIKI_COMMIT_MESSAGE"
-        git push --set-upstream "$GIT_REPOSITORY_URL" master
+        git push --set-upstream "$GIT_REPOSITORY_URL" main
     )
   else # wiki -> $DESTINATION
     rsync -avzr --delete --exclude='.git/' "$tmp_dir/" "$DESTINATION"
