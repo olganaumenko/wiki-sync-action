@@ -126,7 +126,7 @@ if [ "$DIFF" != "" ]; then
   fi
 else 
     warning "No file diff between $SOURCE and $DESTINATION. Exiting."
-fi 
+fi
 
 rm -rf "$tmp_dir"
 debug "Finished - $SOURCE synced to $DESTINATION"
